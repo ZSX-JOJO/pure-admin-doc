@@ -61,25 +61,28 @@
         </svg>
       </div>
     </div>
-    <div style="margin-bottom: 10px;">
+    <div>
       <!--Vdoing主题遵循MIT协议，完全开源且免费。如果您对主题的修改并不大，希望您保留主题的链接。-->
       Theme by
       <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a>
       <template v-if="footer">
         | Copyright © {{ footer.createYear }}-{{ new Date().getFullYear() }}
-        <span v-html="footer.copyrightInfo"></span>
+        <!-- <span v-html="footer.copyrightInfo"></span> -->
+        <a href="https://github.com/pure-admin/vue-pure-admin" target="_blank" title="pure-admin">
+          pure-admin | MIT License
+        </a>
       </template>
     </div>
   </div>
 </template>
 
 <script>
-import { fetch } from 'whatwg-fetch'
+// import { fetch } from 'whatwg-fetch'
 export default {
   data() {
     return {
-      stars: '16k',
-      forks: '3k',
+      stars: '16.6k',
+      forks: '3.1k',
     }
   },
   computed: {
@@ -90,29 +93,29 @@ export default {
       return this.$themeConfig.footer
     },
   },
-  beforeMount() {
-    fetch('https://api.github.com/repos/pure-admin/vue-pure-admin', {
-      method: 'get',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then((response) => {
-      return response.json()
-    }).then((data) => {
-      const { stargazers_count, forks_count } = data
-      this.stars = stargazers_count
-      this.forks = forks_count
-    }).catch(function (error) {
-      console.log(error)
-    })
-  }
+  // beforeMount() {
+  //   fetch('https://api.github.com/repos/pure-admin/vue-pure-admin', {
+  //     method: 'get',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   }).then((response) => {
+  //     return response.json()
+  //   }).then((data) => {
+  //     const { stargazers_count, forks_count } = data
+  //     this.stars = stargazers_count
+  //     this.forks = forks_count
+  //   }).catch(function (error) {
+  //     console.log(error)
+  //   })
+  // }
 }
 </script>
 
 <style lang="stylus">
 // $mobileSidebarWidth = $sidebarWidth * 0.82
 .footer
-  margin-top -1.8rem
+  margin-top -3.5rem
   text-align center
   color #666
   box-sizing border-box

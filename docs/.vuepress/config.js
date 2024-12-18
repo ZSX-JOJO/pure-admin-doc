@@ -3,7 +3,7 @@ const base = require("../../base.js");
 const htmlModules = require("./config/htmlModules.js");
 
 module.exports = {
-  title: "Pure Admin 保姆级文档（已兼容最新版v5.8.0）",
+  title: "Pure Admin 保姆级文档",
   description: "一款开源完全免费且开箱即用的中后台管理系统模版",
   port: 8889,
   base, // '/<仓库名>/'， 默认'/'
@@ -18,7 +18,20 @@ module.exports = {
         content: "vue-pure-admin,pure-admin,pure-admin-thin,pure-admin-docs",
       },
     ],
+    // [
+    //   "meta",
+    //   { name: "google-adsense-account", content: "ca-pub-3324838481135884" },
+    // ],
     ["meta", { name: "theme-color", content: "#11a8cd" }], // 移动浏览器主题颜色
+    // [
+    //   "script",
+    //   {
+    //     "data-ad-client": "ca-pub-3324838481135884",
+    //     async: "async",
+    //     src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+    //     crossorigin: "anonymous",
+    //   },
+    // ],
     // ['link', { rel: 'manifest', href: '/manifest.json' }],
     // ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     // [
@@ -56,7 +69,7 @@ module.exports = {
     // 主题配置
     nav,
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
-    logo: "https://pure-admin.github.io/pure-admin-doc/img/favicon.ico", // 导航栏logo
+    // logo: "https://pure-admin.cn/img/favicon.ico", // 导航栏logo
     // repo: "pure-admin/vue-pure-admin", // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: "上次更新", // 更新的时间，及前缀文字   string | boolean (取值为git提交时间)
@@ -75,6 +88,7 @@ module.exports = {
       showToArticle: true, // 显示到文章页底部，默认true
       // moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archives'
     },
+    defaultMode: "light",
     // titleBadge: false, // 文章标题前的图标是否显示，默认true
     // titleBadgeIcons: [ // 文章标题前图标的地址，默认主题内置图标
     //   '图标地址1',
@@ -99,22 +113,22 @@ module.exports = {
       name: "pure-admin", // 必需
       href: "https://github.com/xiaoxian521", // 可选的
     },
-    social: {
-      // 社交图标，显示于博主信息栏和页脚栏
-      // iconfontCssFile: '//at.alicdn.com/t/font_1678482_u4nrnp8xp6g.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自由添加
-      icons: [
-        {
-          iconClass: "icon-github",
-          title: "GitHub",
-          link: "https://github.com/xiaoxian521",
-        },
-        {
-          iconClass: "icon-bilibili",
-          title: "bilibili",
-          link: "https://space.bilibili.com/301103230",
-        },
-      ],
-    },
+    // social: {
+    // 社交图标，显示于博主信息栏和页脚栏
+    // iconfontCssFile: '//at.alicdn.com/t/font_1678482_u4nrnp8xp6g.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自由添加
+    // icons: [
+    //   {
+    //     iconClass: "icon-github",
+    //     title: "GitHub",
+    //     link: "https://github.com/xiaoxian521",
+    //   },
+    //   {
+    //     iconClass: "icon-bilibili",
+    //     title: "bilibili",
+    //     link: "https://space.bilibili.com/301103230",
+    //   },
+    // ],
+    // },
     footer: {
       // 页脚信息
       createYear: 2020, // 博客创建年份
@@ -159,7 +173,7 @@ module.exports = {
     [
       "vuepress-plugin-baidu-tongji", // 百度统计
       {
-        hm: "0c53b88acf416a2f1b8ffcb1957da460",
+        hm: "cffd1d66d68028a9190d066cb1c7dc65",
       },
     ],
 
@@ -209,6 +223,7 @@ module.exports = {
       },
     ],
     ["reading-progress"],
+    ["img-lazy"],
     [
       {
         name: "custom-plugins",
